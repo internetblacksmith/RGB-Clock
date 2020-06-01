@@ -7,7 +7,7 @@
     "gulp-real-favicon": "^0.3.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.4.5",
     "autoprefixer": "^9.5.1",
     "browser-sync": "^2.26.5",
