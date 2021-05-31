@@ -1,7 +1,8 @@
 {
   "private": true,
   "engines": {
-    "node": ">=4"
+    "node": "15.14.0",
+    "npm": "7.7.6"
   },
   "dependencies": {
     "gulp-real-favicon": "^0.3.2"
