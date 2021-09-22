@@ -10,7 +10,7 @@
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
-    "autoprefixer": "^10.3.1",
+    "autoprefixer": "^10.3.5",
     "browser-sync": "^2.27.5",
     "chai": "^4.3.4",
     "cross-env": "^7.0.3",
