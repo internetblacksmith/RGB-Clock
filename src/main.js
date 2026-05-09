@@ -1,26 +1,43 @@
 import './styles.css';
+import { COLOR_MAX, colorAt, decToFullHex } from './clock.js';
 
-const COLOR_SPACE = 0xffffff;
 const TICK_MS = 200;
 
-export function decToFullHex(value) {
-  return `#${value.toString(16).padStart(6, '0')}`;
-}
+function bootstrap() {
+  const target = document.querySelector('#color');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
-function tick(target) {
-  const value = Math.floor(Date.now() / TICK_MS) % COLOR_SPACE;
-  const bg = decToFullHex(value);
-  const fg = decToFullHex(COLOR_SPACE - value);
+  const render = () => {
+    const value = colorAt(Date.now(), TICK_MS);
+    const bg = decToFullHex(value);
+    const fg = decToFullHex(COLOR_MAX - value);
+    document.body.style.backgroundColor = bg;
+    target.style.color = fg;
+    target.textContent = bg.toUpperCase();
+  };
 
-  document.body.style.backgroundColor = bg;
-  target.style.color = fg;
-  target.textContent = bg.toUpperCase();
-}
+  let intervalId = null;
+  const play = () => {
+    if (intervalId === null) intervalId = setInterval(render, TICK_MS);
+  };
+  const pause = () => {
+    if (intervalId !== null) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  };
 
-if (typeof window !== 'undefined') {
-  document.addEventListener('DOMContentLoaded', () => {
-    const target = document.getElementById('color');
-    tick(target);
-    setInterval(() => tick(target), TICK_MS);
+  render();
+  if (!reducedMotion.matches) play();
+
+  reducedMotion.addEventListener('change', (e) => {
+    if (e.matches) pause();
+    else play();
   });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootstrap);
+} else {
+  bootstrap();
 }

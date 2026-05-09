@@ -27,10 +27,11 @@ A `Makefile` wraps these with an interactive menu (`make`).
 
 ```
 index.html              Vite entry
-src/main.js             clock logic (exports decToFullHex)
+src/clock.js            pure helpers (decToFullHex, colorAt, COLOR_MAX)
+src/main.js             bootstrap + DOM + reduced-motion handling
 src/styles.css          ~15 lines of CSS
 public/                 favicon + robots.txt
-test/main.test.js       vitest specs
+test/clock.test.js      vitest specs
 vite.config.js          shared Vite + Vitest config
 .github/workflows/ci.yml lint + test + build on push/PR
 ```
