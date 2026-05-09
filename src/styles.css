@@ -1,0 +1,19 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: #000;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: 'Inconsolata', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+#color {
+  font-size: clamp(2.5rem, 12vw, 6rem);
+  letter-spacing: 0.05em;
+  color: #fff;
+  user-select: none;
+}

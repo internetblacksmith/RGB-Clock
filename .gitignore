@@ -1,11 +1,19 @@
 # dependencies
 node_modules
-bower_components
 
-# compiled output
-/dist
-/.tmp
+# build output
+dist
+.vite
 
-# System Files
+# test output
+coverage
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# system
 .DS_Store
 Thumbs.db

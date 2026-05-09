@@ -1,67 +1,32 @@
 {
+  "name": "rgb-clock",
+  "version": "2.0.0",
   "private": true,
+  "type": "module",
+  "description": "A clock that paints the page with the current timestamp as an RGB color.",
   "engines": {
-    "node": "16.9.1",
-    "npm": "7.21.1"
-  },
-  "dependencies": {
-    "gulp-real-favicon": "^0.3.2"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.3",
-    "autoprefixer": "^10.4.14",
-    "browser-sync": "^2.27.10",
-    "chai": "^4.3.7",
-    "cross-env": "^7.0.3",
-    "cssnano": "^4.1.11",
-    "del": "^7.0.0",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-cli": "^2.3.0",
-    "gulp-eslint": "^6.0.0",
-    "gulp-filter": "^7.0.0",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-if": "^3.0.0",
-    "gulp-imagemin": "^8.0.0",
-    "gulp-load-plugins": "^2.0.8",
-    "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-size": "^4.0.1",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-uglify": "^3.0.2",
-    "gulp-useref": "^5.0.0",
-    "mocha": "^10.2.0",
-    "yargs": "18.0.0"
+    "node": "25.9.0",
+    "npm": "11.14.1"
   },
   "scripts": {
-    "serve:test": "cross-env NODE_ENV=test gulp serve",
-    "serve:dist": "cross-env NODE_ENV=production gulp serve",
-    "start": "gulp serve",
-    "build": "cross-env NODE_ENV=production gulp",
-    "test": "npm run serve:test",
-    "tasks": "gulp --tasks"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "eslint": "10.3.0",
+    "globals": "17.6.0",
+    "jsdom": "29.1.1",
+    "vite": "8.0.11",
+    "vitest": "4.1.5"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "Firefox ESR"
-  ],
-  "eslintConfig": {
-    "parserOptions": {
-      "sourceType": "module"
-    },
-    "env": {
-      "es6": true,
-      "node": true,
-      "browser": true
-    },
-    "rules": {
-      "quotes": [
-        2,
-        "single"
-      ]
-    }
-  }
+  ]
 }
