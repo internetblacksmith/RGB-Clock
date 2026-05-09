@@ -1,3 +1,4 @@
+import '@fontsource/inconsolata/latin-400.css';
 import './styles.css';
 import { COLOR_MAX, colorAt, decToFullHex } from './clock.js';
 
