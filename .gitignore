@@ -5,6 +5,9 @@ node_modules
 dist
 .vite
 
+# netlify CLI link metadata + cache
+.netlify
+
 # test output
 coverage
 
