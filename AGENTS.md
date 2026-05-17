@@ -36,7 +36,7 @@ The browserslist (`> 1%, last 2 versions, Firefox ESR`) lives in `package.json`;
 
 ## Critical Rules
 
-- Pin dependencies to exact latest versions. Node `25.9.0` / npm `11.14.1` are pinned in `package.json#engines` and `.node-version`.
+- Pin dependencies to exact latest versions. Node `24.14.0` / npm `11.11.0` are pinned in `package.json#engines` and `.node-version` (current LTS — Netlify's dashboard agrees).
 - Keep `dist/` and `node_modules/` out of git (already in `.gitignore`).
 - Keep `src/clock.js` pure (no `document`/`window`). All DOM and timer code lives in `src/main.js`. New testable logic goes in `clock.js`.
 - This is a one-file portfolio piece. Resist adding frameworks, state libraries, or routing — if it can't be done with `<script type="module">` and a few CSS rules, it doesn't belong here.
